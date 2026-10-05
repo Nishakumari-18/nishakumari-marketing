@@ -51,7 +51,7 @@ export function Navbar() {
   return (
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
-        scrolled ? "border-line bg-background/92" : "border-transparent bg-transparent"
+        scrolled ? "border-line bg-background" : "border-transparent bg-transparent"
       }`}
     >
       <div className="container-x flex h-20 items-center justify-between gap-6">
