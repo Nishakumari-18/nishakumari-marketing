@@ -4,8 +4,8 @@ import { ArrowUp, ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SHARE_IMAGE, SITE_URL } from "@/lib/site";
 
-const TITLE = "Digital Marketing Guide for Real Estate | Nisha Kumari";
-const DESC = "A plain-language map of how every digital marketing channel works for real estate, and how they fit together.";
+const TITLE = "How I Generate Real Estate Leads | Nisha Kumari";
+const DESC = "How I generate leads for real estate brands, channel by channel, and how each one brings you enquiries.";
 
 export const Route = createFileRoute("/guide")({
   head: () => ({
@@ -28,26 +28,56 @@ export const Route = createFileRoute("/guide")({
 });
 
 const TOPICS = [
-  { id: "what-is", pill: "What Is Digital Marketing", title: "What Is Digital Marketing", body: "Digital marketing is how a business gets found, trusted, and chosen online. For a real estate brand, that means reaching buyers while they search, scroll, and compare projects." },
-  { id: "field", pill: "The Whole Field", title: "The Whole Field on One Map", body: "Every channel has a job. SEO and content bring people in, social media builds trust, email and WhatsApp keep the conversation going, landing pages convert, and ads speed everything up." },
-  { id: "brand", pill: "Brand vs Performance", title: "Brand-Building vs. Performance", body: "Brand-building (content, social, SEO) makes buyers remember you. Performance marketing (paid ads) delivers leads right now. Strong businesses need both: ads bring quick enquiries, and brand makes buyers trust you enough to visit." },
-  { id: "content", pill: "Content", title: "Content Marketing", body: "Useful articles, guides, and videos that answer buyers' questions, such as whether a location is good for investment. Good content brings steady enquiries for months, not just for a day." },
-  { id: "seo", pill: "SEO and GEO", title: "SEO and GEO", body: "SEO helps your project show up on Google when buyers search. GEO, or generative engine optimization, is the newer part: making your content clear and trustworthy enough that AI tools like ChatGPT and Gemini mention your brand in their answers." },
-  { id: "social", pill: "Social Media", title: "Social Media Marketing", body: "Consistent posts, reels, and stories that show the project, the location, and real updates. It is where buyers decide whether they trust you." },
-  { id: "email", pill: "Email", title: "Email Marketing", body: "Not every buyer decides in a week. Email keeps your project in front of them with updates, offers, and reminders until they are ready." },
-  { id: "whatsapp", pill: "WhatsApp and Chat", title: "WhatsApp and Conversational Marketing", body: "In India, buyers reply on WhatsApp faster than anywhere else. Quick answers, brochures, and site-visit bookings in chat turn enquiries into visits." },
-  { id: "websites", pill: "Websites and Landers", title: "Websites and Landing Pages", body: "Your website is where all the interest ends up. A fast, clear landing page with one strong call to action turns visitors into enquiries." },
-  { id: "ads", pill: "Performance Ads", title: "Performance Marketing (Paid Ads)", body: "Google and Meta ads put your project in front of ready buyers immediately. Success comes from the right audience, a clear offer, and tracking every lead." },
-  { id: "affiliate", pill: "Affiliate", title: "Affiliate Marketing", body: "Partners promote your project and earn a commission only when a lead or sale results. It widens your reach with low risk." },
-  { id: "together", pill: "How It Fits Together", title: "How the Channels Feed Each Other", body: "A buyer might see a reel, search your project on Google, read a blog, and then message you on WhatsApp. Each channel supports the next, which is why a joined-up plan beats any single channel." },
-  { id: "faq", pill: "FAQ", title: "FAQ", body: "" },
+  { id: "what-i-do", pill: "What I Do", title: "What I Do", body: "I help real estate brands get more enquiries from serious buyers and turn those enquiries into site visits and sales. Lead generation is my main focus. Everything else on this page, from SEO to social media, is a way to bring you better leads." },
+  { id: "system", pill: "My System", title: "My Lead Generation System", body: "" },
+  { id: "build-buy", pill: "Build and Buy", title: "Build and Buy: Two Ways to Get Leads", body: "There are two ways to get leads. Building means content, SEO, and social media. It takes time but keeps working. Buying means paid ads. It brings leads quickly, for as long as you pay. Most projects do best with both: ads for quick enquiries now, and organic work for steady leads later." },
+  { id: "content", pill: "Content", title: "Content Marketing", body: "I write articles and pages that answer what buyers actually ask, such as whether a location is good for investment. Each piece brings buyers to your website and gives them a reason to contact you. I have published 50+ SEO articles with proper meta tags and internal links." },
+  { id: "seo", pill: "SEO and GEO", title: "SEO and GEO", body: "SEO helps your project appear on Google when buyers search. GEO makes your content clear enough that AI tools like ChatGPT and Gemini can mention your brand when buyers ask them. Together they bring buyers who are already looking." },
+  { id: "social", pill: "Social Media", title: "Social Media Marketing", body: "I plan and manage posts, reels, and stories that show your project, its location, and real updates. Buyers check social media before they enquire, so a steady presence builds trust and brings enquiries." },
+  { id: "email", pill: "Email", title: "Email Marketing", body: "Many buyers need weeks to decide. I set up simple email updates so your project stays in front of them until they are ready to visit." },
+  { id: "whatsapp", pill: "WhatsApp", title: "WhatsApp and Conversational Marketing", body: "Buyers reply fastest on WhatsApp. I use it to answer questions quickly, share brochures, and book site visits, so enquiries turn into visits instead of going cold." },
+  { id: "landing-pages", pill: "Landing Pages", title: "Websites and Landing Pages", body: "A landing page has one job: turn a visitor into an enquiry. I make sure the message is clear, the form is simple, and the next step is obvious." },
+  { id: "ads", pill: "Paid Ads", title: "Performance Marketing (Paid Ads)", body: "Google and Meta ads show your project to buyers right now. I help with choosing the right audience, a clear offer, and tracking every lead so you know what is working." },
+  { id: "affiliate", pill: "Affiliate", title: "Affiliate Marketing", body: "Channel partners promote your project and earn only when a lead or sale happens. It widens your reach with little risk." },
+  { id: "together", pill: "Together", title: "How the Channels Work Together", body: "A buyer may see a reel, search your project on Google, read an article, and then message you on WhatsApp. Each channel feeds the next, which is why I plan them together instead of separately." },
+  { id: "expect", pill: "What to Expect", title: "What You Can Expect From Me", body: "A free call to understand your project. A simple plan with timelines. Regular updates in plain language. Reports on leads, site visits, and sales, not just likes. Pricing is shared after our first call." },
+  { id: "faq", pill: "FAQ", title: "Frequently Asked Questions", body: "" },
 ];
 
+const STEPS: [string, string][] = [
+  ["Attract", "get the right buyers to notice your project."],
+  ["Capture", "collect their details through forms, calls, and WhatsApp."],
+  ["Qualify", "separate serious buyers from casual browsers."],
+  ["Follow up", "stay in touch until they are ready for a site visit."],
+  ["Convert", "support the process until the sale."],
+];
+
+function Steps() {
+  return (
+    <>
+      <ol className="relative mt-10 grid gap-8 md:grid-cols-5 md:gap-6">
+        <span aria-hidden className="absolute left-5 top-2 bottom-2 w-px bg-accent/60 md:left-0 md:right-0 md:top-5 md:bottom-auto md:h-px md:w-auto" />
+        {STEPS.map(([t, d], i) => (
+          <li key={t} className="relative pl-14 md:pl-0 md:pt-14">
+            <span className="absolute left-0 top-0 grid h-10 w-10 place-items-center rounded-full border border-accent bg-background font-serif text-lg text-accent">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3 className="text-2xl">{t}</h3>
+            <p className="mt-1 text-muted-foreground">{d.charAt(0).toUpperCase() + d.slice(1)}</p>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-10 max-w-[68ch] text-lg text-muted-foreground">I have worked on the sales side of real estate, so I build this system around what actually closes deals.</p>
+    </>
+  );
+}
+
 const FAQS = [
-  ["How long does SEO take to show results?", "Usually a few months, and it keeps working afterwards."],
-  ["Do I need ads if I already do SEO?", "Often yes. Ads give faster results while SEO builds."],
-  ["Which channel is best for real estate?", "A mix of SEO, social, and WhatsApp usually works best."],
-  ["How do I know if marketing is working?", "By tracking leads, site visits, and sales, not just likes."],
+  ["What does lead generation mean?", "Getting people who are interested in your property to contact you, so your sales team talks to real buyers."],
+  ["How is a lead different from a sale?", "A lead is an interested buyer. A sale comes after follow-up, site visits, and trust. I help with both parts."],
+  ["How long until I see leads?", "Ads can bring enquiries within days. SEO and content usually take a few months and keep working afterwards."],
+  ["Which channel is best for real estate?", "Usually a mix of SEO, social, WhatsApp, and ads. I suggest the mix after learning about your project."],
+  ["How do I know it is working?", "I report leads, site visits, and sales, not just likes."],
 ];
 
 function Faq() {
@@ -110,9 +140,9 @@ function Guide() {
     <>
       <header className="container-x pb-12 pt-10 md:pt-16">
         <Reveal>
-          <p className="eyebrow">Guide</p>
-          <h1 className="h1-display mt-6 max-w-4xl">Digital marketing, explained for real estate.</h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">A plain-language map of how every channel works and how they fit together.</p>
+          <p className="eyebrow">My Approach</p>
+          <h1 className="h1-display mt-6 max-w-4xl">How I generate leads for real estate brands.</h1>
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">No jargon. Here is exactly what I do, channel by channel, and how each one brings you enquiries.</p>
         </Reveal>
         <nav aria-label="Table of Contents" className="mt-12 max-w-2xl rounded-sm border border-line bg-surface-2 p-6 md:p-8">
           <h2 className="font-serif text-2xl">Table of Contents</h2>
@@ -153,6 +183,10 @@ function Guide() {
               <h2 className="h2-display h2-line">{t.title}</h2>
               {t.body && <p className="mt-8 max-w-[68ch] text-lg text-muted-foreground">{t.body}</p>}
             </Reveal>
+            {t.id === "system" && <Steps />}
+            {t.id === "expect" && (
+              <div className="mt-8"><Link to="/" hash="contact" className="btn btn-primary">Book a free consultation</Link></div>
+            )}
             {t.id === "faq" && <Faq />}
           </section>
         ))}
