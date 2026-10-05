@@ -44,7 +44,7 @@ const TOPICS = [
   { id: "faq", pill: "FAQ", title: "Frequently Asked Questions", body: "" },
 ];
 
-const STEPS = [
+const STEPS: [string, string][] = [
   ["Attract", "get the right buyers to notice your project."],
   ["Capture", "collect their details through forms, calls, and WhatsApp."],
   ["Qualify", "separate serious buyers from casual browsers."],
