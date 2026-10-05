@@ -5,7 +5,7 @@ export const NAV_LINKS: { label: string; hash?: string; to?: "/guide" }[] = [
   { label: "Dholera", hash: "dholera" },
   { label: "Services", hash: "services" },
   { label: "Work", hash: "work" },
-  { label: "Guide", to: "/guide" },
+  { label: "My Approach", to: "/guide" },
   { label: "Contact", hash: "contact" },
 ];
 

@@ -13,7 +13,7 @@ function Heading({ eyebrow, title }: { eyebrow: string; title: string }) {
   );
 }
 
-function NumberedList({ items }: { items: { title: string; text?: string }[] }) {
+function NumberedList({ items }: { items: { title: string; text?: string; badge?: string }[] }) {
   return (
     <ol className="mt-12 border-t border-line">
       {items.map((it, i) => (
@@ -23,7 +23,10 @@ function NumberedList({ items }: { items: { title: string; text?: string }[] }) 
         >
           <span className="font-serif text-4xl text-accent md:text-5xl">{String(i + 1).padStart(2, "0")}</span>
           <div>
-            <h3 className="text-2xl transition-colors group-hover:text-accent md:text-3xl">{it.title}</h3>
+            <h3 className="text-2xl transition-colors group-hover:text-accent md:text-3xl">
+              {it.title}
+              {it.badge && <span className="eyebrow ml-3 inline-block align-middle rounded-full border border-accent px-2.5 py-0.5 !text-[0.65rem]">{it.badge}</span>}
+            </h3>
             {it.text && <p className="mt-2 text-muted-foreground">{it.text}</p>}
           </div>
         </li>
@@ -66,7 +69,7 @@ export function Services() {
         </Reveal>
         <NumberedList
           items={[
-            { title: "Real Estate Lead Generation", text: "Attracting and qualifying buyers for your project." },
+            { title: "Real Estate Lead Generation", text: "Attracting and qualifying buyers for your project.", badge: "Main focus" },
             { title: "SEO and Search Strategy", text: "Getting your project found when buyers search." },
             { title: "SEO Content Writing", text: "Blogs and pages that rank, with proper meta tags and internal linking." },
             { title: "Social Media Management", text: "Content planning, posting, and community handling." },
