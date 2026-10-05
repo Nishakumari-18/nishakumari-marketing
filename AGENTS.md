@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Absolute site URL and share image live in src/lib/site.ts; canonical, og:image and sitemap use it so share links stay absolute.
