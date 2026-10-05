@@ -26,7 +26,7 @@ export function Contact() {
   const last = useRef(0);
   const { register, handleSubmit, reset, setValue, formState: { errors, isSubmitting } } = useForm<Values>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", email: "", phone: "", interest: INTERESTS[0], message: "", website: "" },
+    defaultValues: { name: "", email: "", phone: "", interest: "Lead generation", message: "", website: "" },
   });
 
   useEffect(() => {
