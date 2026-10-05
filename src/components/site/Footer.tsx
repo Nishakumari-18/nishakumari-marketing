@@ -16,7 +16,7 @@ export function Footer() {
             l.to ? (
               <Link key={l.label} to={l.to} className="link-slide self-start">{l.label}</Link>
             ) : (
-              <Link key={l.label} to="/" hash={l.hash} className="link-slide self-start">{l.label}</Link>
+              <Link key={l.label} to="/" hash={l.hash ?? "top"} className="link-slide self-start">{l.label}</Link>
             ),
           )}
         </nav>

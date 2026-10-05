@@ -5,7 +5,7 @@ import { NAV_LINKS } from "./nav";
 
 function NavItem({ item, className, onClick }: { item: (typeof NAV_LINKS)[number]; className: string; onClick?: () => void }) {
   if (item.to) return <Link to={item.to} className={className} onClick={onClick}>{item.label}</Link>;
-  return <Link to="/" hash={item.hash} className={className} onClick={onClick}>{item.label}</Link>;
+  return <Link to="/" hash={item.hash ?? "top"} className={className} onClick={onClick}>{item.label}</Link>;
 }
 
 export function Wordmark() {
