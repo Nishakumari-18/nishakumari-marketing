@@ -4,7 +4,7 @@ import { Wordmark } from "./Navbar";
 
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-line">
+    <footer className="border-t border-line pb-20 md:pb-0">
       <div className="container-x section-y grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Wordmark />

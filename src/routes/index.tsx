@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
+import { Dholera, Services, Results, Work, WhyMe, Process } from "@/components/site/Sections";
+import { Contact, WhatsAppButton } from "@/components/site/Contact";
 import headshot from "@/assets/nisha-headshot.jpg.asset.json";
 
 // Swap this for the full-length event photo once it is uploaded.
@@ -12,6 +14,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Freelance digital marketer for real estate brands: lead generation, SEO, SEO content and social media." },
       { property: "og:title", content: "Nisha Kumari | Real Estate Lead Generation & SEO" },
       { property: "og:description", content: "I generate qualified leads for real estate brands and turn them into sales." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -28,7 +32,7 @@ function Home() {
             <p className="mt-6 max-w-md text-lg text-muted-foreground">I generate qualified leads and turn them into sales.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link to="/" hash="contact" className="btn btn-primary">Book a free consultation</Link>
-              <Link to="/" hash="about" className="btn btn-secondary">See my work</Link>
+              <Link to="/" hash="work" className="btn btn-secondary">See my work</Link>
             </div>
             <ul className="mt-12 flex flex-wrap items-center text-sm text-muted-foreground">
               {["10+ sales closed", "25+ client visits", "50+ SEO articles"].map((s, i) => (
@@ -68,6 +72,15 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
+      <Dholera />
+      <Services />
+      <Results />
+      <Work />
+      <WhyMe />
+      <Process />
+      <Contact />
+      <WhatsAppButton />
     </>
   );
 }
