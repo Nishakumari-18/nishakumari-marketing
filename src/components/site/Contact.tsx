@@ -47,6 +47,12 @@ export function Contact() {
     reset();
   };
 
+  useEffect(() => {
+    if (status !== "sent") return;
+    const t = setTimeout(() => setStatus("idle"), 8000);
+    return () => clearTimeout(t);
+  }, [status]);
+
   const field = "mt-2 w-full border border-line bg-surface px-4 py-3 text-foreground outline-none transition-colors focus:border-accent";
   const err = (m?: string) => m && <p className="mt-1 text-sm text-accent" role="alert">{m}</p>;
 
@@ -61,6 +67,14 @@ export function Contact() {
             <a href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} className="link-slide self-start">{CONTACT.phone}</a>
             <a href={`mailto:${CONTACT.email}`} className="link-slide self-start">{CONTACT.email}</a>
             <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="link-slide self-start">LinkedIn</a>
+            <a
+              href="https://wa.me/919031503628"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-slide self-start"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
         </Reveal>
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
