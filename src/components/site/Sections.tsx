@@ -137,7 +137,7 @@ export function Work() {
         <Reveal>
           <Heading eyebrow="Selected Work" title="Work that shows the process." />
         </Reveal>
-        <div className="mt-14 flex flex-col">
+        <div className="mt-14 flex flex-col border-b border-line">
           {rows.map((r, i) => (
             <Reveal key={r.t} className={`border-t border-line py-12 md:w-3/4 ${i % 2 ? "md:ml-auto md:text-right" : ""}`}>
               <span className="font-serif text-6xl text-accent">{String(i + 1).padStart(2, "0")}</span>
@@ -194,7 +194,7 @@ export function Process() {
           <span aria-hidden className="absolute bottom-0 left-5 top-0 w-px bg-accent md:bottom-auto md:left-0 md:right-0 md:top-5 md:h-px md:w-auto" />
           {steps.map((s, i) => (
             <li key={s} className="relative flex gap-6 md:flex-col md:gap-5">
-              <span className="relative grid h-10 w-10 shrink-0 place-items-center border border-accent bg-background font-serif text-lg text-accent">{i + 1}</span>
+              <span className="relative grid h-10 w-10 shrink-0 place-items-center border border-accent bg-background text-center text-base font-bold text-accent">{i + 1}</span>
               <p className="pt-1.5 md:pt-0">{s}</p>
             </li>
           ))}
