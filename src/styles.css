@@ -153,3 +153,6 @@ html.light {
   .h2-line::after { transform: scaleX(1); }
   html { scroll-behavior: auto; }
 }
+
+.wa-fade { animation: waFade 600ms ease 2s both; }
+@keyframes waFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }

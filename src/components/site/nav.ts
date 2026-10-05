@@ -2,6 +2,9 @@
 export const NAV_LINKS: { label: string; hash?: string; to?: "/guide" }[] = [
   { label: "Home", hash: "top" },
   { label: "About", hash: "about" },
+  { label: "Dholera", hash: "dholera" },
+  { label: "Services", hash: "services" },
+  { label: "Work", hash: "work" },
   { label: "Guide", to: "/guide" },
   { label: "Contact", hash: "contact" },
 ];
