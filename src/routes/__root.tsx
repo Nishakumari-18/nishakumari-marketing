@@ -51,8 +51,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Nisha Kumari | Digital Marketing for Real Estate" },
       { name: "description", content: "Freelance digital marketing for real estate brands." },
       { name: "author", content: "Nisha Kumari" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -87,8 +85,9 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Navbar />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />

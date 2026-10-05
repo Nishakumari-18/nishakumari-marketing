@@ -48,7 +48,7 @@ export function Contact() {
   };
 
   const field = "mt-2 w-full border border-line bg-surface px-4 py-3 text-foreground outline-none transition-colors focus:border-accent";
-  const err = (m?: string) => m && <p className="mt-1 text-sm text-accent-soft" role="alert">{m}</p>;
+  const err = (m?: string) => m && <p className="mt-1 text-sm text-accent" role="alert">{m}</p>;
 
   return (
     <section id="contact" className="section-y border-t border-line">
@@ -79,8 +79,8 @@ export function Contact() {
           </button>
           <div aria-live="polite">
             {status === "sent" && <p className="text-accent">Thank you. I'll get back to you soon.</p>}
-            {status === "error" && <p className="text-accent-soft">Sorry, something went wrong. Please try again in a moment.</p>}
-            {status === "wait" && <p className="text-accent-soft">Your message was just sent. Please wait 30 seconds before sending another.</p>}
+            {status === "error" && <p className="text-accent">Sorry, something went wrong. Please try again in a moment.</p>}
+            {status === "wait" && <p className="text-accent">Your message was just sent. Please wait 30 seconds before sending another.</p>}
           </div>
         </form>
       </div>

@@ -3,20 +3,37 @@ import { Reveal } from "@/components/site/Reveal";
 import { Dholera, Services, Results, Work, WhyMe, Process } from "@/components/site/Sections";
 import { Contact, WhatsAppButton } from "@/components/site/Contact";
 import headshot from "@/assets/nisha-headshot.jpg.asset.json";
+import portrait from "@/assets/nisha-portrait.webp.asset.json";
+import { SHARE_IMAGE, SITE_URL } from "@/lib/site";
 
-// Swap this for the full-length event photo once it is uploaded.
-const HERO_PHOTO = headshot.url;
+const HERO_PHOTO = portrait.url;
+const TITLE = "Nisha Kumari | Freelance Digital Marketer for Real Estate";
+const DESC = "Freelance digital marketer helping real estate brands with lead generation, SEO, content, and social media. Based in Noida, India.";
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Person", name: "Nisha Kumari", jobTitle: "Freelance Digital Marketer", telephone: "+919031503628", email: "nishkumari18jsr@gmail.com", url: SITE_URL, image: SHARE_IMAGE, sameAs: ["https://www.linkedin.com/in/nishakumari42/"] },
+    { "@type": "ProfessionalService", name: "Nisha Kumari Digital Marketing", telephone: "+919031503628", url: SITE_URL, image: SHARE_IMAGE, areaServed: "IN", address: { "@type": "PostalAddress", addressLocality: "Noida", addressCountry: "IN" }, sameAs: ["https://www.linkedin.com/in/nishakumari42/"] },
+  ],
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nisha Kumari | Real Estate Lead Generation & SEO" },
-      { name: "description", content: "Freelance digital marketer for real estate brands: lead generation, SEO, SEO content and social media." },
-      { property: "og:title", content: "Nisha Kumari | Real Estate Lead Generation & SEO" },
-      { property: "og:description", content: "I generate qualified leads for real estate brands and turn them into sales." },
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: SHARE_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: SHARE_IMAGE },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(JSON_LD) }],
   }),
   component: Home,
 });
@@ -44,7 +61,10 @@ function Home() {
             <div className="absolute inset-0 left-[14px] top-[14px] border border-accent" aria-hidden />
             <img
               src={HERO_PHOTO}
-              alt="Nisha Kumari, freelance digital marketer for real estate"
+              alt="Nisha Kumari in a white blazer, freelance digital marketer for real estate"
+              width={900}
+              height={900}
+              loading="eager"
               className="photo-fade relative aspect-[4/5] w-full object-cover object-top"
               fetchPriority="high"
             />
@@ -56,8 +76,10 @@ function Home() {
         <div className="container-x grid items-start gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-24">
           <img
             src={headshot.url}
-            alt="Portrait of Nisha Kumari"
+            alt="Formal portrait of Nisha Kumari"
             loading="lazy"
+            width={400}
+            height={400}
             className="aspect-square w-full max-w-sm object-cover object-center"
           />
           <Reveal>
