@@ -140,9 +140,9 @@ function Guide() {
     <>
       <header className="container-x pb-12 pt-10 md:pt-16">
         <Reveal>
-          <p className="eyebrow">Guide</p>
-          <h1 className="h1-display mt-6 max-w-4xl">Digital marketing, explained for real estate.</h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">A plain-language map of how every channel works and how they fit together.</p>
+          <p className="eyebrow">My Approach</p>
+          <h1 className="h1-display mt-6 max-w-4xl">How I generate leads for real estate brands.</h1>
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">No jargon. Here is exactly what I do, channel by channel, and how each one brings you enquiries.</p>
         </Reveal>
         <nav aria-label="Table of Contents" className="mt-12 max-w-2xl rounded-sm border border-line bg-surface-2 p-6 md:p-8">
           <h2 className="font-serif text-2xl">Table of Contents</h2>
@@ -183,6 +183,10 @@ function Guide() {
               <h2 className="h2-display h2-line">{t.title}</h2>
               {t.body && <p className="mt-8 max-w-[68ch] text-lg text-muted-foreground">{t.body}</p>}
             </Reveal>
+            {t.id === "system" && <Steps />}
+            {t.id === "expect" && (
+              <div className="mt-8"><Link to="/" hash="contact" className="btn btn-primary">Book a free consultation</Link></div>
+            )}
             {t.id === "faq" && <Faq />}
           </section>
         ))}
