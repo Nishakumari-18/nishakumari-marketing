@@ -139,11 +139,13 @@ export function Work() {
         </Reveal>
         <div className="mt-14 flex flex-col border-b border-line">
           {rows.map((r, i) => (
-            <Reveal key={r.t} className={`border-t border-line py-12 md:w-3/4 ${i % 2 ? "md:ml-auto md:text-right" : ""}`}>
-              <span className="font-serif text-6xl text-accent">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-4 text-3xl md:text-4xl">{r.t}</h3>
-              <p className="mt-4 text-muted-foreground">{r.d}</p>
-            </Reveal>
+            <div key={r.t} className="border-t border-line">
+              <Reveal className={`py-12 md:w-3/4 ${i % 2 ? "md:ml-auto md:text-right" : ""}`}>
+                <span className="font-serif text-6xl text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-4 text-3xl md:text-4xl">{r.t}</h3>
+                <p className="mt-4 text-muted-foreground">{r.d}</p>
+              </Reveal>
+            </div>
           ))}
         </div>
       </div>
